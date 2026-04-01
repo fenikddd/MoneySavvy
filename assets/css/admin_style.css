@@ -1,0 +1,46 @@
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    transition: margin .25s ease-out;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+/* --- Tambahan Styling untuk Dashboard --- */
+
+.text-xs {
+    font-size: .7rem;
+}
+
+.text-gray-300 {
+    color: #dddfeb !important;
+}
+
+.text-gray-800 {
+    color: #5a5c69 !important;
+}
+
+.card-stats-success { border-left: 0.25rem solid #1cc88a !important; }
+.card-stats-info { border-left: 0.25rem solid #36b9cc !important; }
+.card-stats-warning { border-left: 0.25rem solid #f6c23e !important; }
+.card-stats-danger { border-left: 0.25rem solid #e74a3b !important; }
+
+.chart-area {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+}
+
+.chart-pie {
+    position: relative;
+    height: 15rem;
+    width: 100%;
+}

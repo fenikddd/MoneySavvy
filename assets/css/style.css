@@ -1,0 +1,262 @@
+
+
+
+/* ================================================== */
+/* ===         FILE CSS FINAL MONEYSAVVY          === */
+/* ================================================== */
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variabel Warna untuk kemudahan */
+:root {
+    --brand-blue: #00179C;
+    --brand-yellow: #FFF600;
+    --brand-white: #FFFFFF;
+    --brand-dark: #212529;
+    --brand-light: #f8f9fa;
+}
+
+/* --- Pengaturan Global --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Memberi padding atas global seukuran navbar. PENTING untuk halaman non-hero */
+    padding-top: 90px;
+}
+
+
+/* --- Styling Navbar (VERSI BARU YANG CERDAS) --- */
+/* Aturan dasar navbar tanpa warna latar */
+.navbar-moneysavvy {
+    transition: all 0.3s ease-in-out;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Navbar di halaman internal (Kalkulator, Berita, dll) SELALU BIRU */
+.internal-page .navbar-moneysavvy {
+    background-color: var(--brand-blue);
+}
+
+/* Navbar di homepage AWALNYA TRANSPARAN */
+.homepage .navbar-moneysavvy {
+    background-color: transparent;
+}
+
+/* Efek navbar menjadi BIRU saat di-scroll (berlaku di SEMUA HALAMAN) */
+.navbar-shrink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--brand-blue) !important; /* !important untuk memastikan override */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.navbar-brand {
+    color: var(--brand-white);
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-shrink .navbar-brand img {
+    transform: scale(0.85); /* Logo ikut mengecil */
+}
+
+.navbar-moneysavvy .nav-link {
+    color: var(--brand-white);
+    font-weight: 500;
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.navbar-moneysavvy .nav-link:hover {
+    color: var(--brand-yellow);
+}
+
+.navbar-moneysavvy .nav-link.active {
+    color: var(--brand-yellow) !important;
+}
+
+.navbar-moneysavvy .nav-link.active::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: var(--brand-yellow);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-cta {
+    background-color: var(--brand-yellow);
+    color: var(--brand-dark);
+    font-weight: 600;
+    border: 2px solid var(--brand-yellow);
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: transparent;
+    color: var(--brand-yellow);
+    border-color: var(--brand-yellow);
+}
+
+
+/* --- Styling Khusus Halaman Depan (Homepage) --- */
+.hero-section {
+    /* Tarik hero section ke atas untuk mengisi ruang padding body */
+    margin-top: -90px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-content h1, .hero-content p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+/* --- Styling Konten Umum --- */
+section {
+    overflow: hidden; 
+}
+
+.card-layanan {
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-layanan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+    border-color: var(--brand-blue);
+}
+
+.card-layanan .display-4,
+.text-primary {
+    color: var(--brand-blue) !important;
+}
+
+.btn-primary {
+    background-color: var(--brand-blue);
+    border-color: var(--brand-blue);
+}
+
+.btn-primary:hover {
+    background-color: #00127a;
+    border-color: #00127a;
+}
+
+
+/* --- Styling Footer --- */
+.footer-moneysavvy {
+    background-color: var(--brand-blue);
+}
+
+.footer-moneysavvy a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-moneysavvy a:hover {
+    color: var(--brand-yellow) !important;
+    padding-left: 5px;
+}
+
+.footer-moneysavvy .btn-floating {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-moneysavvy .btn-floating:hover {
+    background-color: var(--brand-yellow);
+    color: var(--brand-blue) !important;
+}
+
+/* --- Styling Halaman Konsultasi (Pricing Card) --- */
+.pricing-card {
+    border: 1px solid #e9ecef;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Penting untuk ribbon */
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+/* Styling untuk kartu yang direkomendasikan */
+.pricing-card.recommended {
+    border: 3px solid var(--brand-blue);
+    transform: scale(1.05); /* Sedikit lebih besar */
+}
+
+.pricing-card.recommended:hover {
+    transform: scale(1.08);
+}
+
+/* Styling untuk pita "Paling Populer" */
+.ribbon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.ribbon span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 10px 0;
+    background-color: var(--brand-yellow);
+    color: var(--brand-dark);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    transform: rotate(45deg) translate(25px, -35px);
+    transform-origin: top left;
+}
+
+/* Penyesuaian agar konten di dalam card rapi */
+.pricing-card .card-body {
+    padding: 2.5rem;
+}
